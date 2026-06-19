@@ -346,6 +346,13 @@ a { color: var(--primary); }
   flex-shrink: 0;
 }
 
+.why-closer {
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -472,6 +479,15 @@ a { color: var(--primary); }
   font-size: 0.87rem;
   color: var(--text-soft);
   line-height: 1.5;
+}
+
+.service-examples-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
 }
 
 .outcome-list {
@@ -842,6 +858,33 @@ a { color: var(--primary); }
   line-height: 1.55;
 }
 
+/* ─── WHAT I BUILD ─── */
+.build-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.build-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.build-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+}
+
+.build-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
 /* ─── ADDITIONAL PROJECTS ─── */
 .project-list {
   list-style: none;
@@ -1081,6 +1124,7 @@ details p {
   .service-grid,
   .work-grid,
   .outcome-grid,
+  .build-grid,
   .assessment-process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1130,6 +1174,7 @@ details p {
   }
 
   .outcome-grid,
+  .build-grid,
   .assessment-process-grid {
     grid-template-columns: 1fr;
   }
@@ -1165,6 +1210,7 @@ details p {
   .service-grid,
   .work-grid,
   .outcome-grid,
+  .build-grid,
   .assessment-process-grid {
     grid-template-columns: 1fr;
   }
