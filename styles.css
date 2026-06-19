@@ -119,9 +119,32 @@ a { color: var(--primary); }
   position: sticky;
   top: 0;
   z-index: 100;
+<<<<<<< Updated upstream
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
+=======
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .btn-primary {
+  background: #0f172a;
+  border-color: #0f172a;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+}
+
+.site-header .btn-primary:hover {
+  background: #020617;
+  border-color: #020617;
+  color: #ffffff;
+}
+
+.site-header .btn-primary:link,
+.site-header .btn-primary:visited {
+  color: #ffffff;
+>>>>>>> Stashed changes
 }
 
 .nav {
@@ -612,6 +635,31 @@ a { color: var(--primary); }
   font-weight: 740;
 }
 
+.case-impact-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.case-impact-list li {
+  font-size: 0.95rem;
+  font-weight: 680;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.work-card-featured .case-impact-list li {
+  color: var(--accent);
+  font-weight: 740;
+}
+
+.work-grid-featured {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.work-card-featured-span {
+  grid-column: 1 / -1;
+}
+
 /* ─── PROCESS ─── */
 .process-steps {
   display: grid;
@@ -768,84 +816,57 @@ a { color: var(--primary); }
   text-align: center;
 }
 
-/* ─── FIT ─── */
-.fit-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2.5rem;
+/* ─── OPPORTUNITIES ─── */
+.section-header-dark h2 {
+  color: var(--text-on-dark);
 }
 
-.fit-col {
+.section-header-dark p {
+  color: var(--text-soft-on-dark);
+}
+
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.opportunity-card {
+  background: var(--bg-dark-card);
+  border: 1px solid var(--border-dark);
   border-radius: var(--radius-lg);
   padding: 2rem;
 }
 
-.fit-yes {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--border-dark);
-}
-
-.fit-no {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border-dark);
-}
-
-.fit-col h3 {
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.opportunity-card h3 {
+  font-size: 1.05rem;
+  color: var(--text-on-dark);
   margin-bottom: 1.25rem;
 }
 
-.fit-yes h3 { color: #34d399; }
-.fit-no h3 { color: #f87171; }
-
-.fit-col ul {
+.opportunity-card ul {
   padding-left: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-}
-
-.fit-yes li::before { content: "✓ "; color: #34d399; font-weight: 700; }
-.fit-no li::before { content: "✕ "; color: #f87171; font-weight: 700; }
-
-.fit-col li {
-  font-size: 0.95rem;
-  color: var(--text-soft-on-dark);
+  gap: 0.55rem;
   margin: 0;
 }
 
-.fit-industries-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #34d399;
-  margin: 1.5rem 0 0.75rem;
-}
-
-.fit-industries {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.fit-industries li::before {
-  content: "• ";
-  color: #34d399;
-  font-weight: 700;
-}
-
-.fit-industries li {
+.opportunity-card li {
   font-size: 0.95rem;
   color: var(--text-soft-on-dark);
   margin: 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.opportunity-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ─── ABOUT ─── */
@@ -992,7 +1013,8 @@ details p {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .service-grid,
-  .work-grid {
+  .work-grid,
+  .opportunity-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1040,7 +1062,7 @@ details p {
     position: static;
   }
 
-  .fit-grid {
+  .opportunity-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -1074,7 +1096,8 @@ details p {
   }
 
   .service-grid,
-  .work-grid {
+  .work-grid,
+  .opportunity-grid {
     grid-template-columns: 1fr;
   }
 
