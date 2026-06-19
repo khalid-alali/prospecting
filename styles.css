@@ -816,57 +816,114 @@ a { color: var(--primary); }
   text-align: center;
 }
 
-/* ─── OPPORTUNITIES ─── */
-.section-header-dark h2 {
-  color: var(--text-on-dark);
-}
-
-.section-header-dark p {
-  color: var(--text-soft-on-dark);
-}
-
-.opportunity-grid {
+/* ─── OUTCOMES ─── */
+.outcome-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-.opportunity-card {
-  background: var(--bg-dark-card);
-  border: 1px solid var(--border-dark);
+.outcome-card {
+  background: #fff;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
 }
 
-.opportunity-card h3 {
+.outcome-card h3 {
+  margin: 0 0 0.65rem;
   font-size: 1.05rem;
-  color: var(--text-on-dark);
-  margin-bottom: 1.25rem;
 }
 
-.opportunity-card ul {
-  padding-left: 0;
+.outcome-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ─── ADDITIONAL PROJECTS ─── */
+.project-list {
   list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  margin: 0;
+  gap: 0.85rem;
 }
 
-.opportunity-card li {
-  font-size: 0.95rem;
-  color: var(--text-soft-on-dark);
-  margin: 0;
-  padding-left: 1rem;
+.project-list li {
   position: relative;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin: 0;
+  line-height: 1.55;
 }
 
-.opportunity-card li::before {
+.project-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--accent);
+  color: var(--primary);
   font-weight: 700;
+}
+
+/* ─── ASSESSMENT PROCESS ─── */
+.assessment-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.assessment-week-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.week-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin: 0 0 0.5rem;
+}
+
+.assessment-week-card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.assessment-week-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.assessment-week-card li {
+  font-size: 0.93rem;
+  color: var(--text-soft);
+  margin-bottom: 0.4rem;
+}
+
+.assessment-deliverables {
+  background: var(--bg-dark);
+  border-color: var(--border-dark);
+}
+
+.assessment-deliverables .week-label {
+  color: var(--accent);
+}
+
+.assessment-deliverables h3 {
+  color: var(--text-on-dark);
+}
+
+.assessment-deliverables li {
+  color: var(--text-soft-on-dark);
 }
 
 /* ─── ABOUT ─── */
@@ -917,6 +974,15 @@ a { color: var(--primary); }
   border: 1px solid var(--border);
   padding: 0.3rem 0.8rem;
   border-radius: 100px;
+}
+
+.about-highlights-heading {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 2rem 0 0;
 }
 
 /* ─── FAQ ─── */
@@ -1014,7 +1080,8 @@ details p {
 @media (max-width: 1024px) {
   .service-grid,
   .work-grid,
-  .opportunity-grid {
+  .outcome-grid,
+  .assessment-process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1062,9 +1129,9 @@ details p {
     position: static;
   }
 
-  .opportunity-grid {
+  .outcome-grid,
+  .assessment-process-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 }
 
@@ -1097,7 +1164,8 @@ details p {
 
   .service-grid,
   .work-grid,
-  .opportunity-grid {
+  .outcome-grid,
+  .assessment-process-grid {
     grid-template-columns: 1fr;
   }
 
