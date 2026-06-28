@@ -21,17 +21,31 @@
     <meta name="twitter:title" content="Operations Automation Consulting | Khalid Alali" />
     <meta name="twitter:description" content="Reduce operating costs through workflow automation. Former McKinsey consultant with 11+ years leading operational transformation." />
 
+    <link rel="icon" href="./favicon.jpg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="./favicon.jpg" />
+
+    <meta property="og:image" content="https://example.com/logo.jpg" />
+    <meta name="twitter:image" content="https://example.com/logo.jpg" />
+
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="#top">Khalid Alali</a>
+        <a class="brand" href="#top">
+          <img
+            src="./logo.jpg"
+            alt="Pala Advisory"
+            class="brand-logo"
+            width="240"
+            height="82"
+          />
+        </a>
         <nav class="nav-links">
           <a href="#assessment">Assessment</a>
           <a href="#case-studies">Case Studies</a>
           <a href="#about">About</a>
-          <a href="#assessment" class="btn btn-primary">Book a Call</a>
+          <a href="#assessment" class="btn btn-primary">Request assessment</a>
         </nav>
       </div>
     </header>
@@ -45,7 +59,7 @@
             <p class="eyebrow eyebrow-credential">Former McKinsey Consultant &bull; Former Senior Strategy &amp; Operations Manager at Turo</p>
             <h1>Reduce Operating Costs with AI, Automation, and Custom Software</h1>
             <p class="lead">
-              I help 50–500 employee service businesses identify and implement high-ROI operational improvements using AI, automation, and custom software.
+              I help operations leaders reduce costs, eliminate manual work, and increase capacity using AI, automation, and custom software.
             </p>
             <div class="cta-group">
               <a class="btn btn-primary btn-lg" href="#assessment">Request an Operations Efficiency Assessment</a>
@@ -354,24 +368,39 @@
           </div>
           <div class="outcome-grid">
             <article class="outcome-card">
+              <span class="outcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </span>
               <h3>Lower Labor Costs</h3>
-              <p>$150K annual savings through accounts payable automation.</p>
+              <p>$150K annual savings</p>
             </article>
             <article class="outcome-card">
+              <span class="outcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 14h5"/></svg>
+              </span>
               <h3>Reduced Support Volume</h3>
-              <p>30% reduction in customer contacts through workflow redesign and automation.</p>
+              <p>30% fewer customer contacts</p>
             </article>
             <article class="outcome-card">
+              <span class="outcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
               <h3>Lower Software Spend</h3>
-              <p>$20K annual reduction in software licensing costs through platform consolidation.</p>
+              <p>$20K less licensing cost</p>
             </article>
             <article class="outcome-card">
+              <span class="outcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </span>
               <h3>Faster Cycle Times</h3>
-              <p>99% reduction in payout processing times through operational redesign.</p>
+              <p>99% faster payout processing</p>
             </article>
             <article class="outcome-card">
+              <span class="outcome-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-6"/></svg>
+              </span>
               <h3>Improved Scalability</h3>
-              <p>Migration of 12 million customer cases without operational disruption.</p>
+              <p>12M cases migrated cleanly</p>
             </article>
           </div>
         </div>
@@ -563,7 +592,9 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year">2026</span> Khalid Alali. All rights reserved.</p>
+        <div class="footer-brand">
+          <p>&copy; <span id="year">2026</span> Pala Advisory. All rights reserved.</p>
+        </div>
         <p class="footer-email"><a href="mailto:khalid@khalidalali.com">khalid@khalidalali.com</a></p>
       </div>
     </footer>

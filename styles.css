@@ -107,6 +107,20 @@ a { color: var(--primary); }
   margin: 0;
 }
 
+#outcomes .section-header {
+  max-width: none;
+}
+
+#outcomes .section-header p {
+  max-width: max-content;
+}
+
+@media (max-width: 768px) {
+  #outcomes .section-header p {
+    max-width: none;
+  }
+}
+
 .section-lead {
   font-size: 1.15rem;
   color: var(--text-soft-on-dark);
@@ -119,13 +133,9 @@ a { color: var(--primary); }
   position: sticky;
   top: 0;
   z-index: 100;
-<<<<<<< Updated upstream
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
-=======
-  background: #ffffff;
-  border-bottom: 1px solid var(--border);
 }
 
 .site-header .btn-primary {
@@ -144,7 +154,13 @@ a { color: var(--primary); }
 .site-header .btn-primary:link,
 .site-header .btn-primary:visited {
   color: #ffffff;
->>>>>>> Stashed changes
+}
+
+.site-header .nav {
+  width: min(1160px, 92%);
+  margin-left: max(calc((100% - min(1160px, 92%)) / 2 - 14px), 2.5%);
+  margin-right: auto;
+  padding-left: 0;
 }
 
 .nav {
@@ -152,15 +168,21 @@ a { color: var(--primary); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 2.75rem;
 }
 
 .brand {
-  color: var(--text);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  font-weight: 780;
-  font-size: 1rem;
-  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  margin-right: 1.25rem;
+}
+
+.brand-logo {
+  display: block;
+  height: 56px;
+  width: auto;
 }
 
 .nav-links {
@@ -225,9 +247,16 @@ a { color: var(--primary); }
 
 /* ─── HERO ─── */
 .hero {
-  padding-top: 6rem;
+  padding-top: 5rem;
   padding-bottom: 6rem;
   background: linear-gradient(170deg, #eef3ff 0%, #ffffff 45%, #f7f8fa 100%);
+}
+
+.hero-logo {
+  display: block;
+  height: 52px;
+  width: auto;
+  margin-bottom: 2.5rem;
 }
 
 .hero-inner {
@@ -843,19 +872,37 @@ a { color: var(--primary); }
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
+  padding: 1.5rem;
   box-shadow: var(--shadow-sm);
 }
 
+.outcome-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.outcome-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 .outcome-card h3 {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.35rem;
   font-size: 1.05rem;
 }
 
 .outcome-card p {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.55;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--text-muted);
 }
 
 /* ─── WHAT I BUILD ─── */
@@ -1103,10 +1150,23 @@ details p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
 }
 
-.footer-inner p {
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.footer-brand p {
   margin: 0;
   font-size: 0.88rem;
   color: var(--text-muted);
