@@ -12,30 +12,104 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Opportunity Assessment | Pala Advisory</title>
+    <title>AI Consulting for Operations, Finance, and Support | Pala Advisory</title>
     <meta
       name="description"
-      content="Pala Advisory helps operations leaders identify and implement high-ROI AI, automation, data, and custom software opportunities across customer operations, finance, reporting, and internal workflows."
+      content="AI consulting for operations, finance, and support. Pala Advisory implements accounts payable automation and the workflows around it for 50–500 person companies."
     />
     <meta name="author" content="Khalid Alali" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://palaadvisory.com/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Helping operations leaders turn AI into measurable business results" />
-    <meta property="og:description" content="Pala Advisory helps companies identify and implement high-ROI AI, automation, data, and custom software opportunities across customer operations, finance, reporting, and internal workflows." />
+    <meta property="og:title" content="AI Consulting for Operations, Finance, and Support | Pala Advisory" />
+    <meta property="og:description" content="AI consulting for operations, finance, and support. Pala Advisory implements accounts payable automation and the workflows around it for 50–500 person companies." />
     <meta property="og:url" content="https://palaadvisory.com/" />
     <meta property="og:image" content="https://palaadvisory.com/images/logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AI Opportunity Assessment | Pala Advisory" />
-    <meta name="twitter:description" content="Pala Advisory helps operations leaders identify and implement high-ROI AI, automation, data, and custom software opportunities." />
+    <meta name="twitter:title" content="AI Consulting for Operations, Finance, and Support | Pala Advisory" />
+    <meta name="twitter:description" content="AI consulting for operations, finance, and support. Pala Advisory implements accounts payable automation and the workflows around it for 50–500 person companies." />
     <meta name="twitter:image" content="https://palaadvisory.com/images/logo.png" />
 
     <link rel="icon" href="./favicon.jpg" type="image/jpeg" />
     <link rel="apple-touch-icon" href="./favicon.jpg" />
 
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://palaadvisory.com/#organization",
+          "name": "Pala Advisory",
+          "url": "https://palaadvisory.com/",
+          "email": "khalid@palaadvisory.com",
+          "logo": "https://palaadvisory.com/images/logo.png",
+          "founder": { "@id": "https://palaadvisory.com/#khalid" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://palaadvisory.com/#khalid",
+          "name": "Khalid Alali",
+          "jobTitle": "Founder",
+          "url": "https://palaadvisory.com/",
+          "worksFor": { "@id": "https://palaadvisory.com/#organization" },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "UC Berkeley Haas School of Business"
+          },
+          "description": "Former McKinsey consultant and former Senior Strategy and Operations Manager at Turo."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why not just use ChatGPT ourselves?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The prompt is the easy part. The hard part is redesigning the workflow, connecting your systems, handling the exceptions, creating auditability, managing adoption, and measuring what changed. That is where most internal attempts stall."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do we need to replace our existing software?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Almost never. The opportunity is usually in connecting what you already have, automating the handoffs, eliminating manual steps, and making the data flow where it needs to go without a person in the middle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What systems do you work with?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "QuickBooks Enterprise, NetSuite, Sage, HubSpot, Salesforce, Airtable, Google Workspace, Slack, and most common ticketing, CRM, and ERP systems. If you have an API or a webhook, there is usually a path."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this strategy or implementation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both, but the value is in implementation. The assessment surfaces the opportunity. The engagement builds and deploys it. Strategy without a working system is just a deck."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can we see results?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simple workflow automation can show measurable impact in weeks. More complex systems with multiple integrations or approval workflows take longer, typically two to four months to full deployment."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -50,10 +124,10 @@
           />
         </a>
         <nav class="nav-links">
-          <a href="#assessment">Assessment</a>
-          <a href="./what-should-ai-do-in-my-business/">Use Cases</a>
-          <a href="#case-studies">Case Studies</a>
-          <a href="#about">About</a>
+          <a href="./finance-ai/">Finance</a>
+          <a href="./customer-operations-ai/">Customer Operations</a>
+          <a href="./field-service-ai/">Field Service</a>
+          <a href="./operations-data/">Data</a>
           <a href="#assessment" class="btn btn-primary">Request Assessment</a>
         </nav>
       </div>
@@ -173,6 +247,7 @@
               <p>
                 Start where repeat contact reasons are stable, triage rules can be defined, and knowledge quality determines response time.
               </p>
+              <p class="service-more"><a href="./customer-operations-ai/">Customer service automation</a></p>
             </article>
 
             <article class="service-card">
@@ -181,6 +256,7 @@
               <p>
                 Best for invoice intake, approval routing, duplicate detection, payout controls, and any workflow with a clear audit trail.
               </p>
+              <p class="service-more"><a href="./finance-ai/">Accounts payable automation</a></p>
             </article>
 
             <article class="service-card">
@@ -189,6 +265,7 @@
               <p>
                 Useful when work crosses teams, locations, or systems and the current process depends on manual handoffs or tribal knowledge.
               </p>
+              <p class="service-more"><a href="./field-service-ai/">Field service automation</a></p>
             </article>
 
             <article class="service-card">
@@ -197,6 +274,7 @@
               <p>
                 Worth fixing when leaders cannot agree on metrics, reporting takes too long, or downstream automation needs clean data to work.
               </p>
+              <p class="service-more"><a href="./operations-data/">Reporting and visibility</a></p>
             </article>
           </div>
         </div>
@@ -450,6 +528,7 @@
                   <li>Faster processing times</li>
                   <li>Reduced manual effort with a clearer control path</li>
                 </ul>
+                <p class="service-more"><a href="./accounts-payable-automation-case-study/">Read the accounts payable case study</a></p>
               </div>
             </article>
           </div>
@@ -690,6 +769,18 @@
       <div class="container footer-inner">
         <div class="footer-brand">
           <p>&copy; <span id="year">2026</span> Pala Advisory. All rights reserved.</p>
+          <nav class="footer-links" aria-label="Pages">
+            <a href="./finance-ai/">Accounts payable</a>
+            <a href="./quickbooks-accounts-payable-automation/">QuickBooks</a>
+            <a href="./sage-intacct-accounts-payable-automation/">Sage Intacct</a>
+            <a href="./netsuite-accounts-payable-automation/">NetSuite</a>
+            <a href="./accounts-payable-automation-best-practices/">Best practices</a>
+            <a href="./accounts-payable-automation-case-study/">Case study</a>
+            <a href="./customer-operations-ai/">Customer ops</a>
+            <a href="./field-service-ai/">Field service</a>
+            <a href="./operations-data/">Data</a>
+            <a href="./what-should-ai-do-in-my-business/">Use cases</a>
+          </nav>
         </div>
         <p class="footer-email"><a href="mailto:khalid@palaadvisory.com">khalid@palaadvisory.com</a></p>
       </div>
