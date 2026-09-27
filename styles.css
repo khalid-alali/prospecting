@@ -335,6 +335,11 @@ body.modal-open {
   gap: 1rem;
 }
 
+.intake-form[hidden],
+.intake-success[hidden] {
+  display: none;
+}
+
 .intake-form__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2115,7 +2120,19 @@ details p {
 }
 
 .proof-stats {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.proof-stats .stat-card {
+  grid-column: span 2;
+}
+
+.proof-stats .stat-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.proof-stats .stat-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .proof-note {
@@ -2238,6 +2255,12 @@ details p {
     grid-template-columns: 1fr;
   }
 
+  .proof-stats .stat-card,
+  .proof-stats .stat-card:nth-child(4),
+  .proof-stats .stat-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .rebuild-connector {
     padding: 0.15rem 0;
   }
@@ -2275,6 +2298,12 @@ details p {
   .build-examples .use-case-grid,
   .final-cta-split {
     grid-template-columns: 1fr;
+  }
+
+  .proof-stats .stat-card,
+  .proof-stats .stat-card:nth-child(4),
+  .proof-stats .stat-card:nth-child(5) {
+    grid-column: auto;
   }
 
   .build-examples .use-case-card,
