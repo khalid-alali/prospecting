@@ -1,4 +1,62 @@
 (() => {
+  const track = (event, properties = {}) => {
+    if (window.palaAnalytics?.capture) {
+      window.palaAnalytics.capture(event, properties);
+      return;
+    }
+    if (window.posthog?.capture) {
+      window.posthog.capture(event, properties);
+    }
+  };
+
+  const bindNetlifyForm = (form, { successState, formName, method }) => {
+    if (!form) return;
+
+    form.addEventListener("submit", async (event) => {
+      if (typeof fetch !== "function") return;
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const body = new URLSearchParams(formData).toString();
+      const email = String(formData.get("email") || "").trim();
+
+      try {
+        await fetch(window.location.pathname, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body,
+        });
+
+        track("contact_form_submitted", { form: formName });
+        track("booking_completed", { method });
+
+        if (email && window.posthog?.identify) {
+          window.posthog.identify(email, { email });
+        }
+
+        form.hidden = true;
+        if (successState) successState.hidden = false;
+      } catch (error) {
+        if (window.location.protocol === "file:") {
+          alert("Form submission is only available on the deployed site.");
+          return;
+        }
+        throw error;
+      }
+    });
+  };
+
+  const reviewForm = document.querySelector("[data-review-form]");
+  if (reviewForm) {
+    bindNetlifyForm(reviewForm, {
+      successState: document.querySelector("[data-review-success]"),
+      formName: reviewForm.getAttribute("name") || "post-acquisition-review",
+      method: "review_form",
+    });
+  }
+
   const modal = document.querySelector("[data-intake-modal]");
   if (!modal) return;
 
@@ -10,16 +68,6 @@
   const successState = modal.querySelector("[data-intake-success]");
 
   let lastFocusedElement = null;
-
-  const track = (event, properties = {}) => {
-    if (window.palaAnalytics?.capture) {
-      window.palaAnalytics.capture(event, properties);
-      return;
-    }
-    if (window.posthog?.capture) {
-      window.posthog.capture(event, properties);
-    }
-  };
 
   const setHidden = (hidden) => {
     modal.hidden = hidden;
@@ -67,42 +115,11 @@
     }
   });
 
-  if (form) {
-    form.addEventListener("submit", async (event) => {
-      if (typeof fetch !== "function") return;
-      event.preventDefault();
-
-      const formData = new FormData(form);
-      const body = new URLSearchParams(formData).toString();
-      const email = String(formData.get("email") || "").trim();
-
-      try {
-        await fetch(window.location.pathname, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body,
-        });
-
-        track("contact_form_submitted", { form: "intake" });
-        track("booking_completed", { method: "intake_form" });
-
-        if (email && window.posthog?.identify) {
-          window.posthog.identify(email, { email });
-        }
-
-        if (form) form.hidden = true;
-        if (successState) successState.hidden = false;
-      } catch (error) {
-        if (window.location.protocol === "file:") {
-          alert("Form submission is only available on the deployed site.");
-          return;
-        }
-        throw error;
-      }
-    });
-  }
+  bindNetlifyForm(form, {
+    successState,
+    formName: "intake",
+    method: "intake_form",
+  });
 
   setHidden(true);
   if (dialog) {
