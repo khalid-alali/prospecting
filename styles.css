@@ -1532,6 +1532,19 @@ details p {
   text-wrap: pretty;
 }
 
+.hero-qualifier {
+  margin: 1rem 0 0;
+  max-width: 42rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.field-optional {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .problem-list,
 .use-case-list {
   list-style: none;
