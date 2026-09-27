@@ -80,6 +80,11 @@ a { color: var(--primary); }
   padding: 6rem 0;
 }
 
+#review,
+#what-we-fix {
+  scroll-margin-top: 5.5rem;
+}
+
 .section-alt {
   background: var(--bg-subtle);
 }
