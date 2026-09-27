@@ -58,6 +58,7 @@ posthog.init("phc_p4qJVS74WFwHbSpCkzLddpSnHSCVRfKjgtf7oMnkhGgG", {
     "field-service-ai",
     "operations-data",
     "what-should-ai-do-in-my-business",
+    "post-acquisition-operations",
   ];
 
   const path = window.location.pathname || "/";
@@ -122,6 +123,13 @@ posthog.init("phc_p4qJVS74WFwHbSpCkzLddpSnHSCVRfKjgtf7oMnkhGgG", {
       if (!link) return;
 
       const href = link.getAttribute("href") || "";
+
+      if (href.includes("#review")) {
+        capture("booking_started", {
+          method: "in_page_form",
+          cta: (link.textContent || "").trim().slice(0, 80),
+        });
+      }
 
       if (href.startsWith("mailto:")) {
         capture("email_clicked", {
